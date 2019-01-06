@@ -1,0 +1,168 @@
+@media screen and (max-width: 1024px ){
+	.banner_left {
+	    margin-left: 170px;
+	}
+	.banner_left_p1 {
+	    padding-top: 40px;
+	}
+	.new {
+	    margin: auto;
+	    float: none;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.menu div {
+	    padding: 0 22px;
+	}
+	.banner_left {
+	    margin-left: 111px;
+	}
+	.banner_left {
+    	width: 65%;
+	}
+	.feature {
+	    height: auto;
+	}
+}
+
+@media screen and (max-width: 414px){
+	.search{
+		width: 360px;
+		flex-direction: column;
+	}
+	.menu{
+		height: auto;
+		flex-direction: column;
+		padding-bottom: 15px;
+	}
+	.menu div{
+		padding: 20px 0;
+	}
+	.change_a_job_p1 {
+	    padding-top: 25px;
+	    padding-bottom: 20px;
+	}
+	.banner{
+		height: auto;
+	}
+	.m6{
+		width: 100%;
+	}
+	.m4{
+		width: 100%;
+	}
+	.new {
+	    width: 345px;
+	}
+	.subcribe_search {
+	    width: 360px;
+	}
+	.subcribe {
+	    height: auto;
+	    padding-bottom: 20px;
+	}
+	.TEXT_feature{
+		font-size: 25px;
+	}
+	.action a {
+	    padding: 0px 8px;
+	}
+	.footer p {
+	    font-size: 16px;
+	}
+	.search{
+		flex-direction: column;
+		height: auto;
+		margin-bottom: 95px;
+	}
+	.search > div{
+		height: 45px;
+
+	}
+	.search_input input {
+	    width: 250px;
+	}
+	.search_location span {
+	    padding-left: 0px;
+	}
+	.search_location img {
+	    padding-left: 97px;
+	}
+}
+
+@media screen and (max-width: 375px){
+	.menu {
+	    padding-bottom: 20px;
+	}
+	.change_a_job_p2{
+		line-height: 23px;
+		    padding: 0 7px;	
+	}
+	.banner_left_p1 {
+	    font-size: 35px;
+	}
+	.wrap {
+	    margin: 8px 12px;
+	}
+	.footer p {
+	    font-size: 15px;
+	}
+}
+@media screen and (max-width: 360px){
+	.head_menu {
+	    height: auto;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	.head_menu div{
+		padding: 5px 0;
+	}
+	.change_a_job {
+	    height: auto;
+	}
+	.change_a_job_p2{
+		padding: 0 10px 7px 7px;
+	}
+	.banner_left_p1{
+		    font-size: 34px;
+		        padding-top: 24px;
+	}
+	.banner_left {
+	    margin: auto;
+	}
+	.search {
+	    width: 340px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.header_p1 {
+	    font-size: 37px;
+	}
+	.banner_left_p2 {
+	    padding: 25px 0 40px 0;
+	}
+	.xanh {
+	    padding-bottom: 25px;
+	}
+	.TEXT_feature {
+	    height: 180px;
+	    line-height: 180px;
+	        font-size: 22px;
+	}
+	.new p {
+	    padding: 45px 10px 40px 10px;
+	}
+	.subcribe_search {
+	    width: 280px;
+	}
+	.footer {
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: center;
+	}
+	.search {
+	    width: 300px;
+	}
+}

@@ -1,0 +1,430 @@
+@media screen and (max-width: 1024px ){
+
+	/* ----------- */
+	.text_sign_up{
+		border: none;
+		padding: 0;
+	}
+    .number > div {
+    	padding: 0 55px;
+	}
+	.explore_p2{
+		text-align: center;
+	}
+	.img_top {
+    	height: 230px;
+	}
+	.text_on_img {
+    width: 80%;
+    height: 80%;
+	}
+	.red {
+    margin-bottom: 60px;
+	}
+	.img{
+		height: 500px;
+	}
+	.red_p1 {
+	    font-size: 18px;
+	    padding-top: 85px;
+	}
+
+
+	/* ------- */
+	.text_blue_on_img {
+	    width: 80%;
+	    height: 80%;
+	    
+	    top: 7px;
+	}
+	.blue{
+		height: 40px;
+		margin-bottom: 130px;
+	}
+	.blue_p1 {
+	    font-size: 20px;
+	        padding-top: 75px;
+	}
+
+	/* ------- */
+	.wrapp {
+    	width: 260px;
+	}	
+	.footer_cont > div {
+	    padding: 0 36px;
+	}
+	.footer_input {
+    	width: 150px;
+	}
+	.footer_subcribe a{
+		font-size: 13px;
+	}
+	.footer{
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 768px){
+   .sign_in > div{
+		padding: 15px;
+		border: none;
+	}
+	.sign_in a{
+		font-size: 12px;
+	}
+
+	.text_sign_up{
+		border: none;
+		padding: 0;
+	}
+	.menu{
+		padding: 0;
+	}
+	.search_re div {
+	    padding: 0 8px;
+	}
+	.search_re a{
+		font-size: 12px;
+	}
+
+	.text_sign_in{
+		border: 1px solid white;
+	}
+	 .reserve_seach{
+		width: 400px;
+	}
+	.reserve_input {
+	    width: 280px;
+	        font-size: 13px;
+    text-indent: 10px;
+	}
+	.number > div {
+	    padding: 0 2px;
+	}
+	.explore_p2,  .explore_p1{
+	    text-align: center;
+	}
+	/* ------ */
+	
+	.banner_p2 {
+	    padding-bottom: 45px;
+	}
+	
+	.footer_cont > div {
+	    padding: 0 10px;
+	}
+	
+	.img_top {
+	    height: 185px;
+	}
+	.text_on_img {
+	    width: 170px;
+	     /* background: green; */ 
+	    height: 80%;
+	    top: 30px;
+	    left: 22px;
+	}
+	.red{
+		        margin-bottom: 0px;
+	}
+	.red_p1{
+		padding-top: 106px;
+	}
+	.red_p2{
+		font-size: 13px;
+	}
+	.anh {
+	    	padding: 0 6px;
+	}
+	.text_on_img p{
+		font-size: 15px;
+	}
+	.img {
+	    height: 265px;
+	}
+	.wrapp {
+	    width: 205px;
+	}
+	
+	.text_blue_on_img {
+	    width: 80%;
+	    height: 80%;
+	     /* background: green;  */
+	    top: 20px;
+	    left: 20px;
+	}
+	.blue {
+	    width: 105px;
+	    height: 35px;
+	    margin-bottom: 93px;
+	}
+	.blue_p1{
+		padding-top: 75px;
+	}
+	.blue_icon div {
+	        font-size: 14px;
+	}
+	.text_blue_on_img p{
+		font-size: 15px;
+	}
+	.res img{
+	    height: 15px;
+	    width: 15px;
+	}
+	
+
+	.footer_cont > div {
+		padding: 0 7px;
+	}
+	.footer_input {
+	    width: 110px;
+	}
+	    .footer_subcribe div {
+	    padding: 0 10px;
+	}
+	.footer_input {
+	    padding: 0 3px 0 3px;
+	        font-size: 12px;
+    text-indent: 5px;
+	}
+	.footer_subcribe a{
+		font-size: 12px;
+	}
+	.explore-more {
+	    height: 175px;
+	} 
+	.footer_cont p{
+		font-size: 10px;
+	}
+
+}
+
+@media screen and (max-width: 414px){
+    .m6 {
+	    width: 100%;
+	}
+	.logo {
+	    height: auto;
+	}
+	.sign_in {
+	    height: auto;
+	}
+	.reserve .p1 {
+	    font-size: 55px;
+	    font-weight: bold;
+	    padding-top: 110px;
+	}
+	.anh {
+	    padding: 4px 0px;
+	}
+	.footer_cont{
+		height: auto;
+		    flex-direction: column;
+		    align-items: center;
+	}
+	.wrapp {
+	    width: 255px;
+	}
+	.footer_input {
+	    width: 165px;
+	}
+	.footer_icon div {
+	    padding: 0 21px;
+	}
+	/* ------- */
+	.img_top{
+		height: auto;
+	}
+	.img{
+		height: auto;
+	}
+	.anh{
+		height: auto;
+		padding: 0 5px 5px 5px;
+	}
+	.m8{
+		width: 100%;
+	}
+	.m4{
+		width: 100%;
+	}
+	.text_on_img {
+	    width: 235px;
+	    width: 80%;
+	   /*  background: green; */
+	}
+	.red{
+		height: 65px;
+		width: 110px;
+	}
+	.red_p1 {
+	        padding-top: 169px;
+    font-size: 38px;
+	}
+	.red_p2 {
+	    font-size: 35px;
+	}
+	.red_span{
+		font-size: 30px;
+	}
+	.banner_h1 {
+	    padding-top: 127px;
+	    font-size: 55px;
+	}
+
+	.blue {
+    width: 145px;
+    height: 53px;
+    margin-bottom: 54px;
+}
+.blue_p1 {
+    font-size: 35px;
+}
+.blue_icon span{
+	font-size: 23px;
+}
+.blue_span_bold{
+	font-size: 24px;
+}
+}
+@media screen and (max-width: 375px){
+.reserve_seach {
+    width: 350px;
+}
+.reserve_input {
+    width: 240px;
+}
+.number{
+	flex-direction: column;
+	height: auto;
+	justify-content: center;
+	align-items: center;
+}
+.number > div{
+	border-bottom: 1px solid #d4d4d4;
+	border-right: none;
+	    padding: 10px 0;
+}
+.number_p_Bolod {
+    padding-bottom: 0;
+}
+.number_p_Nomal{
+	padding-top: 0;
+}
+.red_p1{
+	    padding-top: 146px;
+}
+.blue {
+    margin-bottom: 30px;
+}
+.boat-more {
+    height: 130px;
+    }
+
+}
+
+@media screen and (max-width: 360px){
+	.logo {
+	    height: auto;
+	}
+	.sign_in {
+	    height: auto;
+	}
+	.m6{
+		width: 100%;
+	}
+
+    .reserve_seach{
+    	width: 330px;
+    	    margin-left: 20px;
+    }
+    .reserve_input{
+    	width: 225px;
+    	    font-size: 10px;
+    }
+    .reserve .p1{
+    	font-size: 49px;
+    	    padding-top: 90px;
+    }
+    .reserve .p2{
+    	font-size: 22px;
+    }
+	.banner_h1 {
+	    padding-top: 113px;
+	    font-size: 49px;
+	}
+	.make_money {
+	    margin-left: 35px;
+	}
+	.footer_cont{
+		height: auto;
+		    flex-direction: column;
+		    align-items: center;
+	}
+	.wrapp {
+	    width: 257px;
+	}
+	.footer_input {
+	    width: 170px;
+	}
+	.footer_icon div {
+	    padding: 0 21px;
+	}
+	.anh {
+	    padding: 5px 0px;
+	}
+	.text_blue_on_img {
+	    left: 40px;
+	}
+	.blue{
+		margin-bottom: 20px;
+	}
+	.red_p1{
+		padding-top: 142px;
+		font-size: 32px;
+	}
+	.red_p2{
+		font-size: 28px;
+	}
+
+}
+
+@media screen and (max-width: 320px){
+    .reserve_seach {
+    width: 290px;
+    flex-direction: column;
+    background: #e7434e;
+}
+    .reserve_input{
+    	width: 290px;
+    }
+    .number {
+    	flex-direction: column;
+    	height: auto;
+}
+.make_money {
+    margin-left: 0;
+}
+.explore-more a{
+	text-align: center;
+}
+.explore-more a{
+	padding: 20px 20px;
+}
+.banner_h1 {
+    padding-top: 70px;
+    font-size: 44px;
+}
+.banner_p2 {
+	font-size: 24px;
+}
+.boat {
+    height: 220px;
+}
+.boat_p1{
+	padding-top: 60px;
+}
+.blue_p1 {
+    font-size: 30px;
+}
+}

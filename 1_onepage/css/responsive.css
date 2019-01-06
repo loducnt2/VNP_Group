@@ -1,0 +1,39 @@
+.main1500{
+	max-width: 1190px;
+	height: auto;
+	margin: 0 auto;
+}
+.main1200{
+	max-width: 950px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.row{
+	width: 100%;
+}
+.row:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.m1, .m2, .m3, .m4, .m5, .m6, .m7, .m8 , .m9{
+	float: left;
+}
+.m1{width: 8.33%;}
+.m2{width: 16.67%;}
+.m3{width: 25%;}
+.m4{width: 33.33%;}
+.m5{width: 41.67%;}
+.m6{width: 50%;}
+.m7{width: 58.33%;}
+.m8{width: 66.67%;}
+.m9{width: 75%;}
+.m10{width: 83.33%;}
+.m11{width: 91.67%;}
+.m12{width: 100%;}
+
+.clr{
+	clear: both;
+}
