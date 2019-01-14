@@ -7,11 +7,22 @@ a{
 	margin: 0;
 	padding: 0;
 }
+.search_hide{
+	display: none;
+}
+.gach_gach{
+	display: none;
+}
+.gach_gach_head{
+	display: none;
+}
+
 header{
 	height: 950px;
 	width: 100%;
 	background-image: url('../images/1.png'); background-position: center;
 	border-bottom: 1px solid #d4d9de;
+	background-repeat: no-repeat;
 }
 
 
@@ -25,6 +36,7 @@ header{
 }
 .logo a{
 	color: white;
+	    font-size: 29px;
 }
 .action{
 	display: flex;
@@ -33,10 +45,11 @@ header{
 .action a{
 	color: #a3a19b;
 	padding: 10px 22px;
+	font-size: 18px;
 }
 .action a:last-child{
 	border: 1px solid white;
-
+	    border-radius: 4px;
 }
 .dn{
 	font-weight: bold;
@@ -48,7 +61,7 @@ header{
 	display: flex;
 	height: 750px;
 	 flex-direction: column;
-	 justify-content: center;
+	 /* justify-content: center; */
 	 align-items: center;
 }
 .head_bottom{
@@ -77,32 +90,52 @@ header{
 .search{
 	width: 770px;
 	height: 60px;
-	margin: auto;
+	/* margin: auto; */
 	background: white;
-	margin-bottom: 263px;
+/* 	margin-bottom: 263px; */
+	border-radius: 4px;
+	font-size: 18px;
+    font-family: 'Raleway', sans-serif;
 
 	display: flex;
-	    align-items: center;
+	align-items: center;
+	justify-content: center;
 }
 .search div{
 	flex: 1;
+	border-right: 1px solid #d4d9de;
+	    height: 100%;
 }
 .search div:nth-of-type(1) {
 	flex: 2;
 }
+
 .search_input{
+	height: 100%;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
+
 .search_input input{
-    padding: 20px 0;
-    width: 340px;
+    height: 60px;
+    width: 100%;
     text-indent: 20px;
     border-width: 0;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 4px 0 0 4px;
+    color: #9d9fa2;
+    background-image: url('../images/icons8-search-480.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 28px;
 }
-.search_input img{
-	padding-top: 20px;
+.fa-search:before {
+    padding: 0 10px;
+    color: #9d9fa2;
 }
+
 .search_location{
 	display: flex;
 	justify-content: space-between;
@@ -110,15 +143,26 @@ header{
 }
 .search_location span{
 	padding-left: 20px;
+	color: #9d9fa2;
 }
 .search_location img{
 	padding-right: 15px;
 }
-.search_search a{
+
+.search_search{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.search_search button{
     padding: 12px 30px;
-    margin-left: 43px;
     background: #3885e5;
     color: white;
+    border-radius: 4px;
+    border-width: 0;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
 
 .learn_more{
@@ -135,27 +179,61 @@ header{
 /* -----------  main1200  ----------- */
 
 .menu{
-	display: flex;
 	height: 100px;
-	align-items: center;
-	justify-content: space-around;
+}
+.menu ul{
+	float: left;
+	list-style: none;
+	text-align: center;
+}
+.menu ul li{
+	display: inline-block;
+  padding: 40px 40px;
+  position: relative;
+}
+.menu ul li a{
+	display: block;
+	color: #9d9fa2;
+}
+.menu a:hover {
+  color: #3885e5;
+}
 
+.cate{
+	
 }
-.menu div{
-	padding: 0 42px;
+.menu ul li a::after{ 
+  content: ".";
+  display: block;
+  color: #9d9fa2;
+  float: right;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 35px;
+	font-size: 20px;
 }
-.menu a:hover{
-	color: #3885e5;
-}
-.menu_left{
+.menu ul li:first-child{
 	padding-left: 0 !important;
 }
-.menu_right{
+.menu ul li:first-child a{
+	color: #3885e5 !important;
+}
+
+.menu ul li:last-child{
 	padding-right: 0 !important;
 }
-.cate{
-	padding: 15px 20px;
+
+.menu ul li:last-child a:last-child{
+	padding: 15px 15px;
 	border: 1px solid #a5a6a9;
+	    border-radius: 5px;
+}
+.menu ul li:last-child a::after{
+	content: "" !important;
+}
+.a1::after{
+	content: "" !important;
 }
 /* ---------------  change_a_job   ------------------ */
 .change_a_job{
@@ -194,7 +272,9 @@ header{
 .banner_left{
 	width: 50%;
 	height: 550px;
-	margin-left: 310px;
+	/* margin-left: 310px; */
+	    float: right;
+    margin-right: 20px;
 }
 .banner_left_p1{
 	font-size: 36px;
@@ -209,6 +289,7 @@ header{
 	padding: 15px 20px;
 	border: 1px solid white;
 	color: white;
+	    border-radius: 4px;
 }
 .banner_left a:hover{
 	color: blue;
@@ -239,26 +320,26 @@ header{
 .wrap1 h5{
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
-	color: #eaebec;
+	color: #8b8f94;
 }
 .wrap1 span{
 	display: block;
 }
 .wrap1_span1{
-	color: #d9e6f9;
+	color: #80abec;
 	font-size: 18px;
 	font-family: 'Raleway', sans-serif;
 	padding: 12px 0;
 }
 .wrap1_span2{
-	color: #eaebec;
+	color: #babbbd;
 	font-size: 16px;
 	font-family: 'Raleway', sans-serif;
 }
 .wrap p{
 	font-size: 18px;
 	font-family: 'Raleway', sans-serif;
-	color: #eaebec;
+	color: #4f5660;
 	padding-top: 40px;
 	padding-bottom: 30px;
 	line-height: 25px;
@@ -267,7 +348,7 @@ header{
 	font-weight: bold;
 	font-size: 18px;
 	font-family: 'Raleway', sans-serif;
-	color: #c3daf7;
+	color: #3885e5;
 }
 .wrap a:hover{
 	color: #6099e9;
@@ -276,33 +357,27 @@ header{
 	padding: 40px 33px 50px 33px;
 	border: 1px solid #d4d9de;
 	margin: 0 12px;
+	opacity: 0.5;
 }
+ .wrap:hover{
+	opacity: 1;
+}
+ 
 .wrap1{
 	display: flex;
 }
 .wrap1 div:nth-of-type(1){
 	padding-right: 37px;
 }
+.active{
+	opacity: 1 !important;
+}
 
-.wrap1_center_h5{
-	color: #8b8f94 !important;
-}
-.wrap1_center_span1{
-	color: #80abec !important;
-}
-.wrap1_center_span2{
-	color: #babbbd !important;
-}
-.wrap1_center_p{
-	color: #4f5660 !important;
-}
-.wrap1_center_a{
-	color: #3885e5 !important;
-}
 /* ---------------  Banner 2   ------------------ */
 .banner2{
 	background-image: url('../images/2.png'); background-position: center;
 	height: 550px;
+	background-repeat: no-repeat;
 }
 .new{
 	height: 550px;
@@ -372,7 +447,7 @@ header{
 	flex: 1;
 }
 .subcribe_search div:nth-of-type(1){
-	flex: 2.5
+	flex: 2.5;
 }
 
 .subcribe_search input{
@@ -383,19 +458,18 @@ header{
 	color: #9d9fa2;
 	border-radius: 6px;
 }
-.subcribe_search a{
-	color: white;
-	font-weight: bold;
-	line-height: 45px;
+.subcribe_search button{
+	    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    background-color: #3885e5;
+    border-width: 0px;
+    border-radius: 6px;
 }
-.subcribe_search a:hover{
-	color: #348bfb;
-}
-.Text_search{
-	background: #3885e5;
-	border-radius: 6px;
-}
-
 /* -------------   footer ----------- */
 .footer{
 	height: 75px;
