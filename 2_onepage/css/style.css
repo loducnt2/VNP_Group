@@ -44,7 +44,7 @@ header{
 }
 .action a{
 	color: #a3a19b;
-	padding: 10px 22px;
+	padding: 10px 20px;
 	font-size: 18px;
 }
 .action a:last-child{
@@ -126,11 +126,12 @@ header{
     font-family: 'Raleway', sans-serif;
     border-radius: 4px 0 0 4px;
     color: #9d9fa2;
-    background-image: url('../images/icons8-search-480.png');
+    /* background-image: url('../images/icons8-search-480.png');
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 28px;
+    background-size: 28px; */
 }
+
 .fa-search:before {
     padding: 0 10px;
     color: #9d9fa2;
@@ -141,14 +142,20 @@ header{
 	justify-content: space-between;
 	align-items: center;
 }
-.search_location span{
+/* .search_location span{
 	padding-left: 20px;
 	color: #9d9fa2;
 }
 .search_location img{
 	padding-right: 15px;
-}
+} */
 
+.search_location select{
+	width: 100%;
+    border-width: 0;
+    color: #9d9fa2;
+    font-size: 18px;
+}
 .search_search{
 	display: flex;
 	align-items: center;
@@ -177,7 +184,12 @@ header{
 
 
 /* -----------  main1200  ----------- */
-
+.menu1{
+	display: none;
+}
+.menu2{
+	display: none;
+}
 .menu{
 	height: 100px;
 }
