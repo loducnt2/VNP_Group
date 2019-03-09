@@ -1,4 +1,5 @@
 @import url('responsive.css');
+@import url('components/css/feature.css');
 
 a{
 	text-decoration: none;
@@ -329,61 +330,7 @@ header{
 	color: #4f5660;
 	line-height: 230px;
 }
-.wrap1 h5{
-	font-family: 'Raleway', sans-serif;
-	font-size: 16px;
-	color: #8b8f94;
-}
-.wrap1 span{
-	display: block;
-}
-.wrap1_span1{
-	color: #80abec;
-	font-size: 18px;
-	font-family: 'Raleway', sans-serif;
-	padding: 12px 0;
-}
-.wrap1_span2{
-	color: #babbbd;
-	font-size: 16px;
-	font-family: 'Raleway', sans-serif;
-}
-.wrap p{
-	font-size: 18px;
-	font-family: 'Raleway', sans-serif;
-	color: #4f5660;
-	padding-top: 40px;
-	padding-bottom: 30px;
-	line-height: 25px;
-}
-.wrap a{
-	font-weight: bold;
-	font-size: 18px;
-	font-family: 'Raleway', sans-serif;
-	color: #3885e5;
-}
-.wrap a:hover{
-	color: #6099e9;
-}
-.wrap{
-	padding: 40px 33px 50px 33px;
-	border: 1px solid #d4d9de;
-	margin: 0 12px;
-	opacity: 0.5;
-}
- .wrap:hover{
-	opacity: 1;
-}
- 
-.wrap1{
-	display: flex;
-}
-.wrap1 div:nth-of-type(1){
-	padding-right: 37px;
-}
-.active{
-	opacity: 1 !important;
-}
+
 
 /* ---------------  Banner 2   ------------------ */
 .banner2{

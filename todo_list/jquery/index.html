@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+	
+	<script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<div id="myDIV" class="header">
+	    	<h2 style="margin:5px">Công việc của tôi</h2>
+	    	<span id="TickAll" class="addBtn">Tick</span>
+	    	<span id="Cancel" class="addBtn">Cancel</span>
+	    	<input type="text" id="myInput" placeholder="Công việc...">
+	    	<!-- <input type="text" id="myInput" placeholder="Công việc..." onkeypress="return runScript(event)"> -->
+	    	<span id="newElement" class="addBtn">Thêm</span>
+	  	</div>
+	 
+		<ul id="myUL">
+		    <!-- <li class="checked">A<span class="close">X</span></li>
+			<li>B<span class="close">X</span></li>
+			<li>C<span class="close">X</span></li> -->
+		</ul>
+		
+		<div class="action">
+			<div class="action_count" id="hidden1">
+				<span><strong id="count"></strong>công việc</span>
+			</div>
+			<div class="action_UL" id="hidden2">
+				<ul class="action_ul">
+					<li><a href="#" id="TatCa">Tất cả</a></li>
+					<li><a href="#" id="Active">Chưa</a></li>
+					<li><a href="#" id="Complete">Oke</a></li>
+				</ul>
+			</div>
+			<div class="action_finish" id="hidden3" >
+				<a href="#" id="HoanThanh">Hoàn thành</a>
+			</div>
+		</div>
+		
+		<p id="dem"></p>
+		<p id="show"></p>
+
+		<!-- <button onclick="testName();">Test Name</button>
+		<p id="name"></p> -->
+
+		<!-- <input type="text" id="scriptBox" name="" onkeypress="return runScript(event)"> -->
+	</div>
+	
+
+	<script type="text/javascript" src="js/site.js"></script>
+</body>
+</html>

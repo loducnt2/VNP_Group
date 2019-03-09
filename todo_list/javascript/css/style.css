@@ -1,0 +1,147 @@
+.container {
+  width: 600px;
+  margin: auto;
+}
+/* Chiều cao, chiều dài của phần tử sẽ bao gồm cả padding mà margin của nó */
+* {
+  box-sizing: border-box;
+}
+ 
+ /* phần header của danh sách */
+.header {
+  background-color: #4d5f29;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+ 
+/* xóa float của các phần trước header */
+/* .header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  */
+/* định dạng phần thẻ input */
+input {
+  border: none;
+  width: 60%;
+  padding: 10px;
+  /* float: left; */
+  font-size: 16px;
+  outline: 0;
+}
+ 
+/* định dạng button "thêm" */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  /* float: left; */
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;/*  ĐỊnh dạng con chỏ chuột */
+  transition: 0.3s;
+}
+ 
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+		/* END -- header */
+
+ /* xóa bỏ padding và margin của thẻ ul */
+ul {
+  margin: 0;
+  padding: 0;
+}
+ 
+/* Định dạng các thẻ li */
+ul li {
+  cursor: pointer;
+   position: relative; 
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  list-style: none;
+}
+ 
+/* thiết lập các phần tử li lẻ một màu nền khác
+- Sử dụng phần tử chẵn lẻ : even - chẵn, odd - lẻ
+ */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+ 
+/* Đổi màu nền thẻ li khi nó được hover */
+ul li:hover {
+  background: #ddd;
+}
+ 
+/* khi thẻ li được chọn thì thêm màu nền và gạch ngang chữ */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Thêm vào trước thẻ li một dấu tích khi thẻ được chọn */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-bottom: 2px solid green;
+  border-right: 2px solid green;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+/*   
+Định dạng button xóa công việc */
+.close {
+  content: "";
+  position: absolute;
+  border: 1px solid green;
+  right: 0;
+  top: 0;
+  padding: 10px 16px 12px 16px;
+}
+ 
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}  
+
+.action{
+  margin-top: 10px;
+  display: flex;
+}
+.action > div{
+  flex: 1;
+}
+.action > div:nth-of-type(1), div:nth-of-type(3){
+  flex: 0.2;
+}
+.action_count{
+  display: flex;
+  align-items: center;
+}
+.action_count strong{
+  padding-right: 10px;
+}
+.action_finish{
+  display: flex;
+  align-items: center;
+}
+.action_UL{
+  display: flex;
+  justify-content: center;
+}
+
+.action_ul li{
+  display: inline-block;
+}
+
