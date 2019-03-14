@@ -1,6 +1,5 @@
 
-
-hienUl();
+showUl();
 
 function createBykey(){
     var n = new Date();
@@ -35,6 +34,7 @@ function newElement() {
           span.className = "close";
           li.appendChild(span);
 
+          // XÓA
           var close = document.getElementsByClassName("close");
           for (var j = 0; j < close.length; j++){
             close[j].onclick = function() {
@@ -50,41 +50,15 @@ function newElement() {
                 item = JSON.stringify(item);
                 localStorage.setItem('test', item);
               }
-
-              var count = document.getElementsByClassName("checked");
-              var dem=0;
-              for (var i = 0; i < count.length; i++){
-                  dem++;
-              }
-              document.getElementById("count").innerHTML = dem;
-              if (dem > 0) {
-                document.getElementById("hidden1").style.display = "flex";
-                document.getElementById("hidden3").style.display = "flex";
-              }else{
-                document.getElementById("hidden1").style.display = "none";
-                document.getElementById("hidden3").style.display = "none";
-              }
-
-              // Hiện bộ lọc 
-              var ul_global = document.querySelector('ul');
-              var li_global = ul_global.getElementsByTagName('LI');
-              var dem_global = 0;
-              for(var j=0; j < li_global.length; j++){
-                dem_global++;
-              }
-              if(dem_global > 0){
-                document.getElementById("hidden2").style.display = "block";
-              }else{
-                document.getElementById("hidden2").style.display = "none";
-              }
-
+              countListLI();
+              countWork();
             }
           }
-        TickCheck();
-        HienBoLoc()
+        tickWork();
+        countListLI();
+        countWork();
     }
   }
-//localStorage.removeItem('test');
 
 function runScript(e){
   if (e.keyCode == 13) {
@@ -92,8 +66,7 @@ function runScript(e){
   }
 }
 
-
-function hienUl(){
+function showUl(){
   if (typeof(Storage) !== "undefined") {
     var test = localStorage.getItem('test');
     var Test2 = JSON.parse(test);
@@ -135,42 +108,14 @@ function hienUl(){
             item = JSON.stringify(item);
             localStorage.setItem('test', item);
           }
-
-          var count = document.getElementsByClassName("checked");
-          var dem=0;
-          for (var i = 0; i < count.length; i++){
-              dem++;
-          }
-          document.getElementById("count").innerHTML = dem;
-          if (dem > 0) {
-            document.getElementById("hidden1").style.display = "flex";
-            document.getElementById("hidden3").style.display = "flex";
-          }else{
-            document.getElementById("hidden1").style.display = "none";
-            document.getElementById("hidden3").style.display = "none";
-          }
-         
-         // Hiện bộ lọc 
-          var ul_global = document.querySelector('ul');
-          var li_global = ul_global.getElementsByTagName('LI');
-          var dem_global = 0;
-          for(var j=0; j < li_global.length; j++){
-            dem_global++;
-          }
-          if(dem_global > 0){
-            document.getElementById("hidden2").style.display = "block";
-          }else{
-            document.getElementById("hidden2").style.display = "none";
-          }
-
+          countListLI();
+          countWork();
         }
 
       }
-
-      TickCheck();
-      SoDemCongViec();
-      HienBoLoc();
-
+      tickWork();
+      countWork();
+      countListLI();
     }
   } else {
       document.write('Trình duyệt của bạn không hỗ trợ local storage');
@@ -178,7 +123,7 @@ function hienUl(){
 }
 
 //THÊM CLASS "checked" VÀO THẺ li NÀO ĐƯỢC Click
-function TickCheck(){
+function tickWork(){
   var listUl = document.querySelector('ul');
   var CheckLi = listUl.getElementsByTagName('LI');
   for (var i = 0; i < CheckLi.length; i++) {
@@ -203,10 +148,7 @@ function TickCheck(){
         item = JSON.stringify(item);
         localStorage.setItem('test', item);
       }
-
-
-
-      SoDemCongViec();
+      countWork();
 
     }
   }
@@ -214,129 +156,123 @@ function TickCheck(){
 }
 
 // HiỆN SỐ ĐẾM CÔNG VIỆC
-function SoDemCongViec(){
-    var ListCheck = document.getElementsByClassName("checked"); 
-    var demCheck = 0;
-    for (var i = 0; i < ListCheck.length; i++) {
-      demCheck++;
+function countWork(){
+    var ulParent= document.querySelector('ul');
+    var li_list = ulParent.getElementsByTagName('LI');
+    var liNumber = 0;
+    for (var i = 0; i < li_list.length; i++) {
+      liNumber++;
     }
-    document.getElementById("count").innerHTML = demCheck;
 
-    if (demCheck > 0) {
-      document.getElementById("hidden1").style.display = "flex";
+    var listCheck = document.getElementsByClassName("checked"); 
+    var checkNumber = 0;
+    for (var i = 0; i < listCheck.length; i++) {
+      checkNumber++;
+    }
+    document.getElementById("count").innerHTML = liNumber - checkNumber;
+
+    if (checkNumber > 0) {
       document.getElementById("hidden3").style.display = "flex";
     }else{
-      document.getElementById("hidden1").style.display = "none";
       document.getElementById("hidden3").style.display = "none";
     }
 }
 
-  //  HIỆN bộ lọc công việc - Tất cả - Chưa hoàn thành - Hoàn thành
-function HienBoLoc(){
-  var ul_global = document.querySelector('ul');
-  var li_global = ul_global.getElementsByTagName('LI');
-  var dem_global = 0;
-  for(var j=0; j < li_global.length; j++){
-    dem_global++;
-  }
-  if(dem_global > 0){
-    document.getElementById("hidden2").style.display = "flex";
-    
-  }else{
-    document.getElementById("hidden2").style.display = "block";
-  }
+// Dem List LI
+function countListLI(){
+    var ulParent = document.querySelector('ul');
+    var li_list = ulParent.getElementsByTagName('LI');
+    var liNumber = 0;
+    for (var i = 0; i < li_list.length; i++) {
+      liNumber++;
+    }
+
+    if (liNumber > 0) {
+      document.getElementById("action").style.display = "flex";
+    }else{
+      document.getElementById("action").style.display = "none";
+    }
 }
 
-function TickAll(){
-  var list_all = document.querySelector('ul');
-  var li_all = list_all.getElementsByTagName('LI');
+function tickAllWork(){
+  var ul_list = document.querySelector('ul');
+  var li_list = ul_list.getElementsByTagName('LI');
 
-   for(var j=0; j < li_all.length; j++){
+   for(var j=0; j < li_list.length; j++){
 
-      li_all[j].className = "checked";
+      li_list[j].className = "checked";
 
       // Đếm số công việc đã làm được
     }
     var item = localStorage.getItem('test');
-    Test2 = JSON.parse(item);
-    for(var i in Test2){
-      Test2[i].check = true;
-      item = JSON.stringify(Test2);
+    test2 = JSON.parse(item);
+    for(var i in test2){
+      test2[i].check = true;
+      item = JSON.stringify(test2);
       localStorage.setItem('test', item);
     }
-
-    SoDemCongViec();
+    countWork();
  }
 
- function Cancel(){
-  var list_all = document.querySelector('ul');
-  var li_all = list_all.getElementsByTagName('LI');
+function unTickAllWork(){
+  var ul_list = document.querySelector('ul');
+  var li_list = ul_list.getElementsByTagName('LI');
 
-   for(var j=0; j < li_all.length; j++){
+   for(var j=0; j < li_list.length; j++){
 
-      li_all[j].classList.remove("checked");
+      li_list[j].classList.remove("checked");
 
       // Đếm số công việc đã làm được
     }
     var item = localStorage.getItem('test');
-    Test2 = JSON.parse(item);
-    for(var i in Test2){
-      Test2[i].check = false;
-      item = JSON.stringify(Test2);
+    test2 = JSON.parse(item);
+    for(var i in test2){
+      test2[i].check = false;
+      item = JSON.stringify(test2);
       localStorage.setItem('test', item);
     }
-
-    SoDemCongViec();
+    countWork();
  }
 
 var count = document.getElementsByClassName("checked");
-var dem=0;
-for (var i = 0; i < count.length; i++){
-    dem++;
-}
-document.getElementById("count").innerHTML = dem;
 
- function TatCa(){
-  var listUl = document.querySelector('ul');
-  var li_tatca = listUl.getElementsByTagName('LI');
-  for(var j = 0; j < li_tatca.length; j++){
-    li_tatca[j].style.display = "block";
+function getAllWork(){
+  var list_ul = document.querySelector('ul');
+  var list_li = list_ul.getElementsByTagName('LI');
+  for(var j = 0; j < list_li.length; j++){
+    list_li[j].style.display = "block";
   }
 }
 
 
-function Active(){
-  var listUl = document.querySelector('ul');
-  var li_tatca = listUl.getElementsByTagName('LI');
-  for(var j = 0; j < li_tatca.length; j++){
-    li_tatca[j].style.display = "block";
+function getUnfinishWork(){
+  var list_ul = document.querySelector('ul');
+  var list_li = list_ul.getElementsByTagName('LI');
+  for(var j = 0; j < list_li.length; j++){
+    list_li[j].style.display = "block";
   }
   for(var j = 0; j < count.length; j++){
     count[j].style.display = "none";
   }
 }
 
-
-function Complete(){
-  var listUl = document.querySelector('ul');
-  var li_tatca = listUl.getElementsByTagName('LI');
-  for(var j = 0; j < li_tatca.length; j++){
-    li_tatca[j].style.display = "none";
+function getCompleteWork(){
+  var list_ul = document.querySelector('ul');
+  var list_li = list_ul.getElementsByTagName('LI');
+  for(var j = 0; j < list_li.length; j++){
+    list_li[j].style.display = "none";
   }
   for(var j = 0; j < count.length; j++){
     count[j].style.display = "block";
   }
 }
 
-function HoanThanh(){
-  var parent = document.getElementById('myUL');
-  var child = document.getElementsByClassName("checked");
-  var dem = 0;
+function deleteWorkComplete(){
+  var myUL = document.getElementById('myUL');
+  var childChecked = document.getElementsByClassName("checked");
 
-    for(var i = 0; i < child.length; i++){
-
-
-      var id = child[i].getAttribute("data-id");
+    for(var i = 0; i < childChecked.length; i++){
+      var id = childChecked[i].getAttribute("data-id");
       var item = localStorage.getItem('test');
       item = JSON.parse(item);
       if(item){
@@ -345,39 +281,16 @@ function HoanThanh(){
         localStorage.setItem('test', item);
       }
 
-      parent.removeChild(child[i]);
+      myUL.removeChild(childChecked[i]);
 
-      HoanThanh();
+      deleteWorkComplete();
     }
-    // Đếm số công việc đã hoàn thành
-    var dem=0;
-    for (var i = 0; i < child.length; i++){
-        dem++;
-    }
-    document.getElementById("count").innerHTML = dem;
-
-    // Ẩn - hiện nút Hoàn thành VÀ số đếm
-    if (dem > 0) {
-      document.getElementById("hidden1").style.display = "flex";
-      document.getElementById("hidden3").style.display = "flex";
-    }else{
-      document.getElementById("hidden1").style.display = "none";
-      document.getElementById("hidden3").style.display = "none";
-    }
-
-    // Hiện bộ lọc 
-    var ul_global = document.querySelector('ul');
-    var li_global = ul_global.getElementsByTagName('LI');
-    var dem_global = 0;
-    for(var j=0; j < li_global.length; j++){
-      dem_global++;
-    }
-    if(dem_global > 0){
-      document.getElementById("hidden2").style.display = "block";
-    }else{
-      document.getElementById("hidden2").style.display = "none";
-    }
+    countListLI();
+    countWork();
 }
 
   
-
+    /*
+    JSON lưu dữ liệu theo kiểu chuỗi do đó cần chuyển đổi nó thành đ.tượng Javascript để sử dụng
+    JSON.parse : Nhận vào 1 chuỗi JSON sau đó chuyển đổi nó thành đối tượng Javascript
+    JSON.stringify : Lấy 1 đ.tượng Javascript chuyển nó thành chuỗi JSON để có thể lưu vào JSON*/

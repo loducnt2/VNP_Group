@@ -1,14 +1,14 @@
 
 $(document).ready(function(){
-	DemCV();
-	hienUl();
+	countWork();
+	showUl();
 
 	function createBykey(){
 	    var n = new Date();
 	    return n.getTime();
 	}
 
-	$("#newElement").click(function(){
+	function createNewElement(){
 		var test = localStorage.getItem("test");
 
 		  var inputValue = $('#myInput').val();
@@ -24,8 +24,8 @@ $(document).ready(function(){
 		      localStorage.setItem('test', JSON.stringify(testObj));
 
 
-		      var li = document.createElement("li");
-		      li.setAttribute("data-id", key)  
+		      /*var li = document.createElement("li");
+		      li.setAttribute("data-id", key);
 		      var textLi = document.createTextNode(inputValue);
 		      li.appendChild(textLi);
 		      document.getElementById("myUL").appendChild(li);
@@ -35,23 +35,16 @@ $(document).ready(function(){
 		      var textSpan = document.createTextNode("X");
 		      span.appendChild(textSpan);
 		      span.className = "close";
-		      li.appendChild(span);
+		      li.appendChild(span);*/
 
-		      //var myUL = $("#myUL");
-		      /*$("#myUL").append("<li></li>");
-		      $("#myUL li").attr("data-id", key);
-		      //var textLi = attr(inputValue);
-		      $("#myUL li").attr('value', inputValue);
-		      //$("#myUL").append(li);
+		      $("#myUL").append("<li></li>");
+		      $("#myUL li:last-child").attr("data-id", key);
+		      $("#myUL li:last-child").append(inputValue);
 		      $("#myInput").val("");
 
-		      var span = $(li).append("<span></span>");
-		      var textSpan = "X";
-
-		      $(span).append(textSpan);
-
-		      $(span).addClass = "close";
-		      $(li).append(span);*/
+		      $("#myUL li:last-child").append("<span></span>")
+		      $("#myUL li:last-child span").append("X");
+		      $("#myUL li:last-child span").addClass("close");
 
 		      // XÓA
 		      $(".close").click(function(){
@@ -66,95 +59,50 @@ $(document).ready(function(){
 		            item = JSON.stringify(item);
 		            localStorage.setItem('test', item);
 		          }
-		          DemCV();
+		          countWork();
+		          countChecked();
+	    			countListLI();
 		      });
 
-		      // Tick CHỌN
-		      	/*$('#myUL li').click(function(){
-					$(this).toggleClass('checked');
-
-					var id = $(this).attr("data-id");
-			      	var item = localStorage.getItem('test');
-			      	item = JSON.parse(item);
-			      	if(item){
-			        	if($(this).hasClass("checked")){
-			          		item[id].check = true;
-			        	}else{
-			          		item[id].check = false;
-			        	}
-			        	item = JSON.stringify(item);
-			        	localStorage.setItem('test', item);
-			      	}
-			      	DemCV();
-				});*/
-
-		   	/*$("li").click(function(){
-				var listUl = document.querySelector('ul');
-			  	var CheckLi = listUl.getElementsByTagName('LI');
-
-			  	$.each(CheckLi, function(i){
-			  		CheckLi[i].onclick = function() {
-				      	//console.log(this);
-				      	if($(this).hasClass("checked")){
-				        	this.classList.remove("checked");
-				      	}else{
-				        	this.className = "checked";
-				      	}
-
-				      	var id = $(this).attr("data-id");
-				      	var item = localStorage.getItem('test');
-				      	item = JSON.parse(item);
-				      	if(item){
-				        	if($(this).hasClass("checked")){
-				          		item[id].check = true;
-				        	}else{
-				          		item[id].check = false;
-				        	}
-				        	item = JSON.stringify(item);
-				        	localStorage.setItem('test', item);
-				      	}
-
-				      	//DemCV();
-				    }
-				})
-			});*/
-
-			DemCV();
+			countWork();
+			countChecked();
+			countListLI();
 		}
+	}
+	$("#newElement").click(function(){
+		createNewElement();
 	});
 
 	$('#myInput').keypress(function (key) {
 		if (key.key==='Enter' && $(this).val()!='') {
-			alert("asd");
-			$("#myInput").val("");
+			createNewElement();
 		}
 	})
 
-	function hienUl(){
+	function showUl(){
 	  if (typeof(Storage) !== "undefined") {
 	    var test = localStorage.getItem('test');
-	    var Test2 = JSON.parse(test);
+	    var test2 = JSON.parse(test);
 
-	    $.each(Test2, function(i){
-	    	var li = document.createElement("li");
-	      	var textLiStorage = Test2[i].data;
+	    $.each(test2, function(i){
+	    	//var li = document.createElement("li");
+	      	var textLiStorage = test2[i].data;
 
-	      	li.setAttribute("data-id", Test2[i].id)  
+	      	//li.setAttribute("data-id", test2[i].id) 
 
-	      	if(Test2[i].check == true){
-	        	li.className = "checked";
+	      $("#myUL").append("<li></li>");
+	      $("#myUL li:last-child").attr("data-id", test2[i].id);
+	      $("#myUL li:last-child").append(textLiStorage);
+
+
+	      	if(test2[i].check == true){
+	        	$("#myUL li:last-child").addClass("checked");
 	      	}
 
-	      // Tao the span Xóa
-	      var textLi = document.createTextNode(textLiStorage);
-	      li.appendChild(textLi);
-	      document.getElementById("myUL").appendChild(li);
-
-	      var span = document.createElement("span");
-	      var textSpan = document.createTextNode("X");
-	      span.appendChild(textSpan);
-	      span.className = "close";
-	      li.appendChild(span);
+	      
+	      $("#myUL li:last-child").append("<span></span>")
+	      $("#myUL li:last-child span").append("X");
+	      $("#myUL li:last-child span").addClass("close");
 
 	      // XÓA
 		    $(".close").click(function(){
@@ -169,23 +117,62 @@ $(document).ready(function(){
 		            item = JSON.stringify(item);
 		            localStorage.setItem('test', item);
 		          }
-		          DemCV();
+		          countWork();
+		          countChecked();
+	    		countListLI();
 		      });
 
 	    })
-	    DemCV();
+	    countWork();
+	    countChecked();
+	    countListLI();
 	  } else {
 	     alert('Trình duyệt của bạn không hỗ trợ local storage');
 	  }
 	}
 
-	function DemCV(){
-		var checkLi = $(".checked");
-		var dem = 0;
-		$.each(checkLi, function(){
-			dem++;
+
+	function countWork(){
+		var liCheck = $(".checked");
+		var checkNumber = 0;
+		$.each(liCheck, function(){
+			checkNumber++;
+		});
+
+		var listLi = $("#myUL li");
+		var liNumber = 0;
+		$.each(listLi, function(){
+			liNumber++;
 		})
-		$("#count").text(dem);
+
+		$("#count").text(liNumber - checkNumber);
+	}
+
+	function countChecked(){
+		var liCheck = $(".checked");
+		var number = 0;
+		$.each(liCheck, function(){
+			number++;
+		});
+
+		if(number > 0){
+			$(".hidden3").css("display", "block");
+		}else{
+			$(".hidden3").css("display", "none");
+		}
+	}
+	function countListLI(){
+		var listLi = $("#myUL li");
+		var liNumber = 0;
+		$.each(listLi, function(){
+			liNumber++;
+		})
+
+		if(liNumber > 0){
+			$(".action").css("display", "flex");
+		}else{
+			$(".action").css("display", "none");
+		}
 	}
 
 	$(document).on('click','#myUL li',function () {
@@ -203,7 +190,9 @@ $(document).ready(function(){
         	item = JSON.stringify(item);
         	localStorage.setItem('test', item);
       	}
-      	DemCV();
+      	countWork();
+      	countChecked();
+      	countListLI();
 	});
 
 	$("#TickAll").click(function(){
@@ -213,13 +202,15 @@ $(document).ready(function(){
 	    })
 
 	    var item = localStorage.getItem('test');
-	    Test2 = JSON.parse(item);
-	    $.each(Test2, function(i){
-	    	Test2[i].check = true;
-		    item = JSON.stringify(Test2);
+	    test2 = JSON.parse(item);
+	    $.each(test2, function(i){
+	    	test2[i].check = true;
+		    item = JSON.stringify(test2);
 		    localStorage.setItem('test', item);
 	    })
-	   DemCV();
+	   countWork();
+	   countChecked();
+	   countListLI();
 	});
 
 	$("#Cancel").click(function(){
@@ -229,13 +220,15 @@ $(document).ready(function(){
 	  	})
 
 	    var item = localStorage.getItem('test');
-	    Test2 = JSON.parse(item);
-	    $.each(Test2, function(i){
-	    	Test2[i].check = false;
-	      	item = JSON.stringify(Test2);
+	    test2 = JSON.parse(item);
+	    $.each(test2, function(i){
+	    	test2[i].check = false;
+	      	item = JSON.stringify(test2);
 	      	localStorage.setItem('test', item);
 	    })
-	    DemCV();
+	    countWork();
+	    countChecked();
+	    countListLI();
 	}); 
 
 	$("#TatCa").click(function(){
@@ -245,24 +238,24 @@ $(document).ready(function(){
 	});
 
 	$("#Active").click(function(){
-		var li_tatca = $('#myUL li');
-		var count = $(".checked");
-		$.each(li_tatca, function(j){
+		var liAll = $('#myUL li');
+		var checkNumber = $(".checked");
+		$.each(liAll, function(j){
 			$(this).css('display','block');
 		})
 
-		$.each(count, function(j){
+		$.each(checkNumber, function(j){
 		   	$(this).css('display','none');
 		})
 	});
 
 	$("#Complete").click(function(){
-		var li_tatca = $('#myUL li');
-		var count = $(".checked");
-		$.each(li_tatca, function(j){
+		var liAll = $('#myUL li');
+		var checkNumber = $(".checked");
+		$.each(liAll, function(j){
 			$(this).css('display','none');
 		})
-	  	$.each(count, function(j){
+	  	$.each(checkNumber, function(j){
 		    $(this).css('display','block');
 		})
 	});
@@ -281,9 +274,60 @@ $(document).ready(function(){
         	item = JSON.stringify(item);
         	localStorage.setItem('test', item);
 
-        	DemCV();
+        	countWork();
+        	countChecked();
+        	countListLI();
 		})
 	});
+
+	// function hienUl(){
+	//   if (typeof(Storage) !== "undefined") {
+	//     var test = localStorage.getItem('test');
+	//     var Test2 = JSON.parse(test);
+
+	//     $.each(Test2, function(i){
+	//     	var li = document.createElement("li");
+	//       	var textLiStorage = Test2[i].data;
+
+	//       	li.setAttribute("data-id", Test2[i].id)  
+
+	//       	if(Test2[i].check == true){
+	//         	li.className = "checked";
+	//       	}
+
+	//       // Tao the span Xóa
+	//       var textLi = document.createTextNode(textLiStorage);
+	//       li.appendChild(textLi);
+	//       document.getElementById("myUL").appendChild(li);
+
+	//       var span = document.createElement("span");
+	//       var textSpan = document.createTextNode("X");
+	//       span.appendChild(textSpan);
+	//       span.className = "close";
+	//       li.appendChild(span);
+
+	//       // XÓA
+	// 	    $(".close").click(function(){
+	// 	        var div = $(this).parent();
+	// 	        $(div).remove();
+
+	// 	          var id = $(div).attr("data-id");
+	// 	          var item = localStorage.getItem('test');
+	// 	          item = JSON.parse(item);
+	// 	          if(item){
+	// 	            delete item[id];
+	// 	            item = JSON.stringify(item);
+	// 	            localStorage.setItem('test', item);
+	// 	          }
+	// 	          DemCV();
+	// 	      });
+
+	//     })
+	//     DemCV();
+	//   } else {
+	//      alert('Trình duyệt của bạn không hỗ trợ local storage');
+	//   }
+	// }
 	
 });
 

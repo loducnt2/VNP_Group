@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>jquery</title>
+	<title>Javascript</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -12,8 +12,8 @@
 
 		<div id="myDIV" class="header">
 	    	<h2 style="margin:5px">Công việc của tôi</h2>
-	    	<span onclick="TickAll()" class="addBtn">Tick</span>
-	    	<span onclick="Cancel()" class="addBtn">Cancel</span>
+	    	<span onclick="tickAllWork()" class="addBtn">Tick</span>
+	    	<span onclick="unTickAllWork()" class="addBtn">Cancel</span>
 	    	<!-- <input type="text" id="myInput" placeholder="Công việc..."> -->
 	    	<input type="text" id="myInput" placeholder="Công việc..." onkeypress="return runScript(event)">
 	    	<span onclick="newElement()" class="addBtn">Thêm</span>
@@ -25,19 +25,19 @@
 		    			<li>C<span class="close">X</span></li> -->
 		</ul>
 		
-		<div class="action">
-			<div class="action_count" id="hidden1" style="display: none;">
-				<span><strong id="count"></strong>công việc</span>
+		<div class="action" id="action" style="display: none;">
+			<div class="action_count">
+				<span id="hiddenSpan"><strong id="count"></strong>&#32; &#32;công việc</span>
 			</div>
-			<div class="action_UL" id="hidden2" style="display: none;">
+			<div>
 				<ul class="action_ul">
-					<li><a href="#" onclick="TatCa()">Tất cả</a></li>
-					<li><a href="#" onclick="Active()">Chưa</a></li>
-					<li><a href="#" onclick="Complete()">Oke</a></li>
+					<li><a href="#" onclick="getAllWork()">Tất cả</a></li>
+					<li><a href="#" onclick="getUnfinishWork()">Chưa</a></li>
+					<li><a href="#" onclick="getCompleteWork()">Oke</a></li>
 				</ul>
 			</div>
-			<div class="action_finish" id="hidden3" style="display: none;">
-				<a href="#" onclick="HoanThanh()">Hoàn thành</a>
+			<div class="action_finish">
+				<a href="#" id="hidden3" style="display: none;" onclick="deleteWorkComplete()">Hoàn thành</a>
 			</div>
 		</div>
 		

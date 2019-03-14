@@ -52,13 +52,13 @@ input {
 		/* END -- header */
 
  /* xóa bỏ padding và margin của thẻ ul */
-ul {
+#myUL{
   margin: 0;
   padding: 0;
 }
  
 /* Định dạng các thẻ li */
-ul li {
+#myUL li {
   cursor: pointer;
    position: relative; 
   padding: 12px 8px 12px 40px;
@@ -71,24 +71,24 @@ ul li {
 /* thiết lập các phần tử li lẻ một màu nền khác
 - Sử dụng phần tử chẵn lẻ : even - chẵn, odd - lẻ
  */
-ul li:nth-child(odd) {
+#myUL li:nth-child(odd) {
   background: #f9f9f9;
 }
  
 /* Đổi màu nền thẻ li khi nó được hover */
-ul li:hover {
+#myUL li:hover {
   background: #ddd;
 }
  
 /* khi thẻ li được chọn thì thêm màu nền và gạch ngang chữ */
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
+#myUL li.checked {
+  /* background: #888; */
+  color: #aaa;
+  /* text-decoration: line-through; */
 }
 
 /* Thêm vào trước thẻ li một dấu tích khi thẻ được chọn */
-ul li.checked::before {
+#myUL li.checked::before {
   content: '';
   position: absolute;
   border-bottom: 2px solid green;
@@ -123,25 +123,35 @@ ul li.checked::before {
   flex: 1;
 }
 .action > div:nth-of-type(1), div:nth-of-type(3){
-  flex: 0.2;
+  flex: 0.5;
 }
 .action_count{
   display: flex;
   align-items: center;
 }
 .action_count strong{
-  padding-right: 10px;
+  padding-right: 1px;
 }
 .action_finish{
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+}
+.action_finish a{
+  text-decoration: none;
 }
 .action_UL{
   display: flex;
   justify-content: center;
 }
-
 .action_ul li{
   display: inline-block;
+  padding: 0 15px;
+}
+.action_ul li a{
+  text-decoration: none;
+}
+.action_ul li a:hover{
+  color: green;
 }
 
